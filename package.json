@@ -1,5 +1,5 @@
 {
-  "name": "priority-queue",
+  "name": "queue-priority",
   "version": "0.1.0",
   "description": "Javascript implementation of a priority queue data structure",
   "main": "index.js",
