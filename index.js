@@ -29,6 +29,31 @@
      */
     PriorityQueue.prototype = {
 
+        /**
+         * Determines if the queue is empty
+         *
+         * @returns {boolean} true if the queue is empty, false otherwise
+         */
+        isEmpty: function() {
+            return this._list.isEmpty();
+        },
+
+        /**
+         * Returns the size, or number of items in the queue
+         *
+         * @returns {number} the number of items in the queue
+         */
+        size: function() {
+            return this._list.getSize();
+        },
+
+        /**
+         * Clears the queue of all data
+         */
+        clear: function () {
+            return this._list.clear();
+        }
+
     };
 
     module.exports = PriorityQueue;
