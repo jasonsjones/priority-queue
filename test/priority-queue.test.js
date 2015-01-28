@@ -27,4 +27,11 @@ describe('Queue Unit Tests', function() {
         queue.isEmpty().should.equal(true);
         queue.size().should.equal(0);
     });
+
+    it('should queue up data with the same priority at the back of queue', function () {
+        queue.queue('some test data', 1);
+        queue.queue('some more test data', 1);
+        queue.queue('and yet some more...', 1);
+        queue.size().should.equal(3);
+    });
 });

@@ -52,6 +52,48 @@
          */
         clear: function () {
             return this._list.clear();
+        },
+
+        /**
+         * Adds a new item containing 'data' just before the node with a lower
+         * priority.
+         *
+         * An item is considered to be be a 'higher' priority if
+         * the priority is a smaller value than the one that follows.  For
+         * example, an item with priority '1' is considered higher priority than
+         * an item with priority '2'--the lower the number, the higher the
+         * priority.
+         *
+         * @param {object} data the data to add to the back of the queue
+         * @param {number} pri the priority of the item.  The lower the number
+         *                 the higher the priority.
+         */
+        queue: function (data, pri) {
+            var payload = {
+                data: data,
+                priority: pri
+            };
+
+            var iter = this._list.iterator;
+            var current;
+
+            while (iter.hasNext()) {
+                current = iter.next();
+                if (current.getData().priority > payload.priority) {
+                    return this._list.insertBefore(current.getData(), payload);
+                }
+            }
+
+            return this._list.insert(payload);
+        },
+
+        /**
+         * Removes the item from the front of the queue
+         *
+         * @returns {object} the item, or data, from the front of the queue
+         */
+        dequeue: function () {
+            return this._list.removeFirst().getData();
         }
 
     };
