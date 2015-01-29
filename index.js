@@ -74,17 +74,23 @@
                 priority: pri
             };
 
-            var iter = this._list.iterator;
-            var current;
-
-            while (iter.hasNext()) {
-                current = iter.next();
-                if (current.getData().priority > payload.priority) {
-                    return this._list.insertBefore(current.getData(), payload);
-                }
+            if (this.size() === 0) {
+               return this._list.insert(payload);
             }
 
-            return this._list.insert(payload);
+            var current = this._list.getHeadNode();
+
+            while (current !== null &&
+                   current.getData().priority <= payload.priority) {
+                       current = current.next;
+            }
+
+            if (current === null) {
+                return this._list.insert(payload);
+            }
+
+            return this._list.insertBefore(current.getData(), payload);
+
         },
 
         /**

@@ -34,4 +34,20 @@ describe('Queue Unit Tests', function() {
         queue.queue('and yet some more...', 1);
         queue.size().should.equal(3);
     });
+
+    it('should queue up data in the correct order based on priority', function () {
+        queue.queue('test data 5', 5);
+        queue.queue('some more test data', 2);
+        queue.queue('test data 8', 8);
+        queue.queue('and yet some more...', 3);
+        queue.queue('test data 6', 5);
+        queue.queue('some test data', 1);
+        queue.queue('test data 7', 6);
+        queue.size().should.equal(7);
+        var first = queue.dequeue();
+        first.data.should.equal('some test data');
+        var second = queue.dequeue();
+        second.data.should.equal('some more test data');
+        queue.size().should.equal(5);
+    });
 });
