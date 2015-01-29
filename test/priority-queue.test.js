@@ -50,4 +50,26 @@ describe('Queue Unit Tests', function() {
         second.data.should.equal('some more test data');
         queue.size().should.equal(5);
     });
+
+    it('should peek at the data at the front of the queue', function () {
+        queue.queue('some more test data', 3);
+        queue.queue('and yet some more', 2);
+        queue.queue('some test data', 1);
+        queue.queue('and even more data', 5);
+        queue.size().should.equal(4);
+        var first = queue.peek();
+        first.data.should.equal('some test data');
+        queue.size().should.equal(4);
+    });
+
+    it('should clear the queue of all data', function () {
+        queue.queue('some more test data', 3);
+        queue.queue('and yet some more', 2);
+        queue.queue('some test data', 1);
+        queue.queue('and even more data', 5);
+        queue.size().should.equal(4);
+        queue.clear();
+        queue.size().should.equal(0);
+        queue.isEmpty().should.equal(true);
+    });
 });
