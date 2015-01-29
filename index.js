@@ -64,9 +64,12 @@
          * an item with priority '2'--the lower the number, the higher the
          * priority.
          *
+         * If pri is not provided (or null), the priority will default to 99.
+         *
          * @param {object} data the data to add to the back of the queue
          * @param {number} pri the priority of the item.  The lower the number
-         *                 the higher the priority.
+         *                 the higher the priority. Defaults to 99 if not
+         *                 provided
          */
         queue: function (data, pri) {
 
@@ -74,7 +77,7 @@
             // data structure
             var payload = {
                 data: data,
-                priority: pri
+                priority: pri || 99
             };
 
             // if the queue is empty, just add the payload

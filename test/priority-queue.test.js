@@ -28,6 +28,12 @@ describe('Queue Unit Tests', function() {
         queue.size().should.equal(0);
     });
 
+    it('should default priority to 99 if a priority is not provided', function () {
+        queue.queue('some test data');
+        var first = queue.dequeue();
+        first.priority.should.equal(99);
+    });
+
     it('should queue up data with the same priority at the back of queue', function () {
         queue.queue('some test data', 1);
         queue.queue('some more test data', 1);
