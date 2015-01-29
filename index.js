@@ -69,26 +69,37 @@
          *                 the higher the priority.
          */
         queue: function (data, pri) {
+
+            // build the payload obj to add to the underlying
+            // data structure
             var payload = {
                 data: data,
                 priority: pri
             };
 
-            if (this.size() === 0) {
+            // if the queue is empty, just add the payload
+            if (this.isEmpty()) {
                return this._list.insert(payload);
             }
 
             var current = this._list.getHeadNode();
 
+            // iterate over the queue to find an item with a lower priority,
+            // then assign that to the current item
             while (current !== null &&
                    current.getData().priority <= payload.priority) {
                        current = current.next;
             }
 
+            // if we get the back of the queue without finding a lower priority
+            // item, just append the payload to the back of the queue
             if (current === null) {
                 return this._list.insert(payload);
             }
 
+            // if we get here, we have landed somewhere in the middle of the
+            // queue, so insert the payload before the current item, which
+            // has a lower priority
             return this._list.insertBefore(current.getData(), payload);
 
         },
