@@ -64,3 +64,70 @@ that would preclude it from being used in the browser--just include it with a
 this implementation in any other context/environment; only tested with node.js_
 
 ----
+
+## Basic Usage
+
+Install with npm :
+
+```bash
+npm install queue-priority --save
+```
+Basic usage example below.  _Note: it does not cover all the available
+methods, rather just highlights the main functionality to get up and running
+with this data structure. For a description of all the methods, see the
+API section._
+
+```javascript
+var Queue = require('queue-priority');
+var queue - new Queue();
+
+queue.isEmpty();
+// --> true
+
+queue.queue('data item 1', 1);
+queue.queue('data item 2', 1);
+queue.queue('data item 3', 1);
+queue.queue('data item 4', 1);
+// queue contains:
+// 'data item 1', <-- front
+//  ... ,
+// 'data item 4'
+
+// Since all items have the same priority, the order they were
+// added to the queue is maintained
+
+queue.isEmpty();
+// --> false
+
+queue.size();
+// --> 4
+
+queue.clear();
+queue.isEmpty();
+// --> true
+
+queue.queue('data item 2', 2);
+queue.queue('data item 4', 4);
+queue.queue('data item 3', 3);
+queue.queue('data item 1', 1);
+// queue contains:
+// 'data item 1', <-- front
+//  ... ,
+// 'data item 4'
+
+// NOTE: order is now based on priority, not the order the items
+// were added to the queue
+
+queue.dequeue();
+// --> removes 'data item 1'
+
+queue.peek()
+// --> 'data item 2'
+
+queue.size();
+// --> 3
+
+queue.clear();
+queue.isEmpty();
+// --> true
+```
