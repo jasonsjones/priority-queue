@@ -64,24 +64,24 @@
          * an item with priority '2'--the lower the number, the higher the
          * priority.
          *
-         * If pri is not provided (or null), the priority will default to 99.
+         * If pri is not provided, the priority will default to null.
          *
          * @param {object} data the data to add to the back of the queue
          * @param {number} pri the priority of the item.  The lower the number
-         *                 the higher the priority. Defaults to 99 if not
+         *                 the higher the priority. Defaults to null if not
          *                 provided
          */
-        queue: function (data, pri) {
+        enqueue: function (data, pri) {
 
             // build the payload obj to add to the underlying
             // data structure
             var payload = {
                 data: data,
-                priority: pri || 99
+                priority: pri || null
             };
 
             // if the queue is empty, just add the payload
-            if (this.isEmpty()) {
+            if (this.isEmpty() || payload.priority === null) {
                return this._list.insert(payload);
             }
 
@@ -90,7 +90,8 @@
             // iterate over the queue to find an item with a lower priority,
             // then assign that to the current item
             while (current !== null &&
-                   current.getData().priority <= payload.priority) {
+                   current.getData().priority <= payload.priority &&
+                   current.getData().priority !== null) {
                        current = current.next;
             }
 

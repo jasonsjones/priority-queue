@@ -28,10 +28,17 @@ describe('Queue Unit Tests', function() {
         queue.size().should.equal(0);
     });
 
-    it('should default priority to 99 if a priority is not provided', function () {
+    it('should default priority to null if a priority is not provided', function () {
         queue.queue('some test data');
         var first = queue.dequeue();
-        first.priority.should.equal(99);
+        should.not.exist(first.priority);
+    });
+
+    it('should order list property with elements whose priority is not provided', function () {
+        queue.queue('some test data');
+        queue.queue('some higher pri test data', 1);
+        var first = queue.dequeue();
+        first.data.should.equal('some higher pri test data');
     });
 
     it('should queue up data with the same priority at the back of queue', function () {
