@@ -172,7 +172,7 @@ MIT &copy; Jason Jones
 
 [npm-image]:https://badge.fury.io/js/queue-pri.svg
 [npm-url]:http://npmjs.org/package/queue-pri
-[travis-image]:https://travis-ci.org/jasonsjones/queue-priority.svg
-[travis-url]:https://travis-ci.org/jasonsjones/queue-priority
-[dm-image]:https://david-dm.org/jasonsjones/queue-priority.svg
-[dm-url]:https://david-dm.org/jasonsjones/queue-priority
+[travis-image]:https://travis-ci.org/jasonsjones/queue-pri.svg
+[travis-url]:https://travis-ci.org/jasonsjones/queue-pri
+[dm-image]:https://david-dm.org/jasonsjones/queue-pri.svg
+[dm-url]:https://david-dm.org/jasonsjones/queue-pri
