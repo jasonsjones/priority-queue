@@ -1,3 +1,4 @@
+# [![npm version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![dependency status][dm-image]][dm-url]
 
 # Priority Queue Data Structure
 
@@ -131,3 +132,47 @@ queue.clear();
 queue.isEmpty();
 // --> true
 ```
+
+## API
+
+**Available methods for a queue instance:**
+
+* ### isEmpty()
+    Determines if the queue is empty or not. Returns true if is empty, false
+    otherwise.
+
+* ### size()
+    Returns the size of the queue, or number of items
+
+* ### clear()
+    Clears the queue of all data
+
+* ### enqueue(data, priority)
+    Adds a new item containing 'data' just before the node with a lower
+    'priority'.
+
+    An item is considered to be be a 'higher' priority if
+    the priority is a smaller value than the one that follows.  For
+    example, an item with priority '1' is considered higher priority than
+    an item with priority '2'--the lower the number, the higher the
+    priority.
+
+    If a priority is not provided, it will default to null.
+
+* ### dequeue()
+    Removes the item from the front of the queue
+
+* ### peek()
+    Returns the data of the item at the front of the queue,
+    but does not remove it
+
+----
+## License
+MIT &copy; Jason Jones
+
+[npm-image]:https://badge.fury.io/js/queue-pri.svg
+[npm-url]:http://npmjs.org/package/queue-pri
+[travis-image]:https://travis-ci.org/jasonsjones/queue-priority.svg
+[travis-url]:https://travis-ci.org/jasonsjones/queue-priority
+[dm-image]:https://david-dm.org/jasonsjones/queue-priority.svg
+[dm-url]:https://david-dm.org/jasonsjones/queue-priority
