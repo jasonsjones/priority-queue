@@ -71,7 +71,7 @@ this implementation in any other context/environment; only tested with node.js_
 Install with npm :
 
 ```bash
-npm install queue-priority --save
+npm install queue-pri --save
 ```
 Basic usage example below.  _Note: it does not cover all the available
 methods, rather just highlights the main functionality to get up and running
@@ -79,7 +79,7 @@ with this data structure. For a description of all the methods, see the
 API section._
 
 ```javascript
-var Queue = require('queue-priority');
+var Queue = require('queue-pri');
 var queue - new Queue();
 
 queue.isEmpty();
