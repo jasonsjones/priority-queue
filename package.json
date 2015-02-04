@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jasonsjones/priority-queue.git"
+    "url": "https://github.com/jasonsjones/queue-pri.git"
   },
   "keywords": [
     "priority queue",
@@ -21,9 +21,9 @@
   "author": "Jason Jones",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jasonsjones/priority-queue/issues"
+    "url": "https://github.com/jasonsjones/queue-pri/issues"
   },
-  "homepage": "https://github.com/jasonsjones/priority-queue",
+  "homepage": "https://github.com/jasonsjones/queue-pri",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.11.0",
