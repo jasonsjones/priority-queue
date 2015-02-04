@@ -1,6 +1,6 @@
 {
   "name": "queue-pri",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Javascript implementation of a priority queue data structure",
   "main": "index.js",
   "directories": {
