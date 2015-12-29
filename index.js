@@ -81,7 +81,7 @@
 
             // if the queue is empty, just add the payload
             if (this.isEmpty() || payload.priority === null) {
-               return this._list.insert(payload);
+                return this._list.insert(payload);
             }
 
             var current = this._list.getHeadNode();
@@ -91,7 +91,7 @@
             while (current !== null &&
                    current.getData().priority <= payload.priority &&
                    current.getData().priority !== null) {
-                       current = current.next;
+                current = current.next;
             }
 
             // if we get the back of the queue without finding a lower priority
