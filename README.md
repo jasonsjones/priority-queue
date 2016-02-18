@@ -1,4 +1,4 @@
-[![npm version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![dependency status][dm-image]][dm-url]
+[![npm version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![dependency status][dm-image]][dm-url] [![devDependency status][devdep-image]][devdep-url]
 
 # Priority Queue Data Structure
 
@@ -176,3 +176,5 @@ MIT &copy; Jason Jones
 [travis-url]:https://travis-ci.org/jasonsjones/queue-pri
 [dm-image]:https://david-dm.org/jasonsjones/queue-pri.svg
 [dm-url]:https://david-dm.org/jasonsjones/queue-pri
+[devdep-image]:https://david-dm.org/jasonsjones/queue-pri/dev-status.svg
+[devdep-url]:https://david-dm.org/jasonsjones/queue-pri#info=devDependencies
